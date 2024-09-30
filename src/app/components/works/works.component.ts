@@ -15,7 +15,7 @@ export class WorksComponent {
     {
       title: 'E-Commerce Web Application',
       description: '#NodeJS #expressJS #ejs #mongoose #EC2',
-      imageUrl: 'assets/P1.png', // Replace with actual image URL
+      imageUrl: 'assets/P1.png', 
       link: 'https://github.com/shabeelashraf5/cowbwoy.shop'
     },
     {
@@ -25,7 +25,7 @@ export class WorksComponent {
       link: 'https://github.com/shabeelashraf5/SCMS-PROJECT'
     },
    
-    // Add more items as needed
+   
   ];
 
 }
