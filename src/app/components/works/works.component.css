@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;600;700&display=swap');
+
+
+  
+  .saira-condensed-regular {
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  .saira-condensed-semibold {
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .saira-condensed-bold {
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
