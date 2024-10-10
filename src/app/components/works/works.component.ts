@@ -24,6 +24,13 @@ export class WorksComponent {
       imageUrl: 'assets/p2.png',
       link: 'https://github.com/shabeelashraf5/SCMS-PROJECT'
     },
+
+    {
+      title: 'Password Generator',
+      description: '#NodeJS #expressJS #Angular17 #mongoose ',
+      imageUrl: 'assets/p3.png', 
+      link: 'https://github.com/shabeelashraf5/password_generator.git'
+    },
    
    
   ];
