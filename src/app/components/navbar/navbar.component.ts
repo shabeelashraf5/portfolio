@@ -10,6 +10,12 @@ export class NavbarComponent {
 
   constructor(private router: Router) {}
 
+  isNavbarOpen = false;
+
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
+  }
+
   scrollToSection(section: string): void {
    
     this.router.navigate([], { fragment: section }).then(() => {
