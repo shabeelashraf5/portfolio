@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
   showProfile: boolean = false
 
   isLoading: boolean = true  
-
+  showHomePage: boolean = false; 
+  
   constructor(private viewport: ViewportScroller, private router: Router ){
    
     
@@ -31,10 +32,12 @@ export class AppComponent implements OnInit {
 
   }
 
+
   ngOnInit(): void {
     const preloader = document.getElementById('preloader');
     const percentageText = document.getElementById('loading-percentage');
-
+    const logo = document.getElementById('preloader-logo');
+  
     let progress = 0;
     const interval = setInterval(() => {
       progress += 1;
@@ -47,12 +50,21 @@ export class AppComponent implements OnInit {
           preloader.style.opacity = '0';
           setTimeout(() => {
             preloader.style.display = 'none'; 
-            this.isLoading = false
-          }, 500); 
+            this.isLoading = false;
+  
+            if (logo) {
+              logo.style.opacity = '1';
+              
+              setTimeout(() => {
+                logo.style.opacity = '0';
+              }, 3000); 
+            }
+          }, 10); 
         }
       }
-    }, 30); // Adjust this for faster or slower loading effect
+    }, 50); 
   }
 
+  
 
 }

@@ -1,16 +1,13 @@
 <div id="preloader" class="fixed inset-0 bg-stone-900 flex flex-col justify-center items-center z-50 transition-opacity duration-500">
   <div class="text-4xl font-semibold text-cyan-600 animate-pulse" id="loading-percentage">0%</div>
+  <img src="assets/IN.png" alt="Logo" class="w-100 h-96 animate-pulse">
 </div>
 
-
 <div class="flex flex-col min-h-screen bg-stone-900">
-  <!-- Add a flex-grow div before the footer -->
-  <app-navbar [isLoading]="isLoading" ></app-navbar>
+  <app-navbar [isLoading]="isLoading"></app-navbar>
 
   <div class="flex-grow">
-   
     <router-outlet></router-outlet>   
-
     <div id="profile" *ngIf="showProfile">
       <app-dashboard></app-dashboard>
     </div>
@@ -24,9 +21,6 @@
     <div id="contact">
       <app-contact></app-contact>
     </div>
-  
   </div>
-
-<!-- <app-footer *ngIf="showFooter"></app-footer> -->
 </div>
 
