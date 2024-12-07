@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 
@@ -7,17 +7,18 @@ import { NavigationEnd, Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   //title = 'profile';
 
   showFooter: boolean = true
 
   showProfile: boolean = false
 
+  isLoading: boolean = true  
+
   constructor(private viewport: ViewportScroller, private router: Router ){
    
     
-
     this.router.events.subscribe((event) => {
 
       if(event instanceof NavigationEnd){
@@ -28,6 +29,29 @@ export class AppComponent {
 
     })
 
+  }
+
+  ngOnInit(): void {
+    const preloader = document.getElementById('preloader');
+    const percentageText = document.getElementById('loading-percentage');
+
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += 1;
+      if (percentageText) {
+        percentageText.innerText = `${progress}%`;
+      }
+      if (progress >= 100) {
+        clearInterval(interval);
+        if (preloader) {
+          preloader.style.opacity = '0';
+          setTimeout(() => {
+            preloader.style.display = 'none'; 
+            this.isLoading = false
+          }, 500); 
+        }
+      }
+    }, 30); // Adjust this for faster or slower loading effect
   }
 
 
