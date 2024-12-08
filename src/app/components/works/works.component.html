@@ -19,7 +19,15 @@
         <a >
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-cyan-300 dark:text-white saira-condensed-semibold">{{item.title}}</h5>
         </a>
-        <p class="mb-3 font-normal text-gray-400 dark:text-gray-400 saira-condensed-regular">{{item.description}}</p>
+         
+  <div class="mb-3 flex flex-wrap gap-2">
+    <ng-container *ngFor="let keyword of item.description">
+      <button type="button" 
+              class="px-3 py-1 text-gray-400 bg-transparent border border-cyan-300 rounded-full text-sm focus:ring-4 focus:outline-none focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500  dark:focus:ring-blue-800">
+        {{ keyword }}
+      </button>
+    </ng-container>
+  </div>
         <a [href]= "item.link" target="_blank" rel="noopener noreferrer">
         <button type="button" class="mtext-blue-700 border border-cyan-300 hover:bg-gray-100 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500">
             <svg class="w-6 h-6 text-cyan-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">

@@ -14,20 +14,20 @@ export class WorksComponent {
   items = [
     {
       title: 'E-Commerce Web Application',
-      description: '#NodeJS #expressJS #ejs #mongoose #EC2',
+      description: ['NodeJS', 'ExpressJS', 'EJS', 'Mongoose', 'EC2'],
       imageUrl: 'assets/P1.png', 
       link: 'https://github.com/shabeelashraf5/cowbwoy.shop'
     },
     {
       title: 'ERP - Supply Chain Management Portal',
-      description: '#nodeJS #expressJS #Angular16 #EC2 #mongoose #s3bucket',
+      description: ['NodeJS', 'ExpressJS', 'Angular16', 'EC2', 'Mongoose', 'S3bucket'],
       imageUrl: 'assets/p2.png',
       link: 'https://github.com/shabeelashraf5/SCMS-PROJECT'
     },
 
     {
       title: 'Password Generator',
-      description: '#NodeJS #expressJS #Angular17 #mongoose ',
+      description: ['NodeJS', 'ExpressJS', 'Angular17', 'Mongoose'],
       imageUrl: 'assets/p3.png', 
       link: 'https://github.com/shabeelashraf5/password_generator.git'
     },
