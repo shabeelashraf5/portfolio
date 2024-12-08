@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   displayedPos: string =''
   greeting: string = "Hello ! I'm "
   myself: string = "I'm"
-  about: string = 'Passionate full stack developer specializing in Angular, Node.js, Express.js, and MongoDB. I have a strong background in building dynamic web applications.  I thrive in both collaborative and independent environments. Explore my portfolio to see my work!'
+  about: string = 'Passionate full stack developer specializing in Angular, NodeJS, ExpressJS, NestJS and MongoDB. I have a strong background in building dynamic web applications.  I thrive in both collaborative and independent environments. Explore my portfolio to see my work!'
   githubLink: string = 'https://github.com/shabeelashraf5'
   linkedInLink: string = 'https://www.linkedin.com/in/mohamed-shabeel-ashraf-8abb4938/'
 

@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
                 logo.style.opacity = '0';
               }, 3000); 
             }
-          }, 10); 
+          }, 500); 
         }
       }
     }, 50); 
