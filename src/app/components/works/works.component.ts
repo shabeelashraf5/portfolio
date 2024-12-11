@@ -27,7 +27,7 @@ export class WorksComponent {
 
     {
       title: 'Password Generator',
-      description: ['NodeJS', 'ExpressJS', 'Angular17', 'Mongoose'],
+      description: ['ExpressJS', 'Angular17', 'Mongoose', 'NodeJS'],
       imageUrl: 'assets/p3.png', 
       link: 'https://github.com/shabeelashraf5/password_generator.git'
     },
