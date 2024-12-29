@@ -5,13 +5,34 @@
     <!-- Main content -->
     <div id="profile" class="flex-grow flex items-center justify-center min-h-screen ">
         <div class="max-w-4xl p-6 bg-stone-900 border border-cyan-300 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mt-24">
-            <a href="#">
+            
+                
+            <a class="flex items-center space-x-4">
                 <h5 class="mb-2 text-4xl tracking-tight text-white dark:text-white saira-condensed-semibold">{{greeting}}</h5>
+                <div >
+                    <!-- Audio Icon Button -->
+                    <button [ngClass]="{'animate-spin': isPlaying}"
+                      (click)="toggleAudio()" 
+                      class="bg-cyan-600 hover:bg-cyan-700 text-white w-8 h-8  rounded-full shadow-md flex items-center justify-center">
+                      <svg *ngIf="!isPlaying" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.25v13.5l13.5-6.75L5.25 5.25z" />
+                      </svg>
+                      <svg *ngIf="isPlaying" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 5.25h2.25v13.5H6.75zM15 5.25h2.25v13.5H15z" />
+                      </svg>
+                    </button>
+                  
+                    <!-- Hidden Audio Player -->
+                    <audio #audioPlayer [src]="'assets/audio/introduction.mp3'"></audio>
+                  </div >
             </a>
-            <a href="#">
-                <h5 class="mb-2 text-5xl text-center font-bold tracking-tight text-cyan-300 dark:text-white silkscreen-regular ">{{displayedText}}</h5>
+            <a >
+                <h5 class="mb-2 text-5xl text-center font-bold tracking-tight text-cyan-300 dark:text-white silkscreen-regular ">{{fullName}}</h5>
             </a>
-            <p class="mb-3 text-3xl text-center font-normal text-cyan-600 dark:text-gray-400 saira-condensed-light">{{displayedPos}}</p>
+            <p class="mb-3 text-3xl text-center font-normal text-cyan-600 dark:text-gray-400 saira-condensed-light">
+                <span class="inline-block">{{ displayedText }}</span>
+              </p>
+              
             <p class="mt-10 mb-3 text-lg md:text-2xl text-center font-normal text-gray-400 dark:text-gray-400 saira-condensed-light">{{about}}</p>
 
             <div class="flex items-center justify-between mt-10">

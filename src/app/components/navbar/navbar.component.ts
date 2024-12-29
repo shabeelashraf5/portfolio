@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import gsap from 'gsap';
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+ 
 
   @Input() isLoading: boolean = false
 
@@ -26,6 +29,21 @@ export class NavbarComponent {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     });
+  }
+
+  vibrate(event: MouseEvent) {
+    const element = event.target as HTMLElement;
+    gsap.fromTo(
+      element,
+      { x: 0 },
+      {
+        x: 5,
+        duration: 0.1,
+        repeat: 5,
+        yoyo: true,
+        ease: 'power1.inOut',
+      }
+    );
   }
 
 }

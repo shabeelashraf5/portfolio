@@ -67,3 +67,22 @@
     font-style: normal;
   }
   
+  .typing {
+    animation: typing 0.1s steps(1) 1, blink 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
