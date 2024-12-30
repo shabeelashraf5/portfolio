@@ -4,13 +4,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { WorksComponent } from './components/works/works.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 const routes: Routes = [
   {path: 'profile' , component: DashboardComponent},
   {path: 'skills' , component: SkillsComponent},
   {path: 'projects', component: WorksComponent},
   {path: 'contact', component: ContactComponent},
-  {path: '', redirectTo: 'profile', pathMatch: 'full'}
+  {path: '', redirectTo: 'profile', pathMatch: 'full'},
 
 ];
 
