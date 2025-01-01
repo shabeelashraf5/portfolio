@@ -1,6 +1,15 @@
-import { AfterViewInit, Component, ElementRef, Inject, PLATFORM_ID, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { isPlatformBrowser } from '@angular/common';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -8,61 +17,91 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
-  styleUrl: './works.component.css'
+  styleUrl: './works.component.css',
 })
 export class WorksComponent implements AfterViewInit {
   @ViewChildren('workItem') workItems!: QueryList<ElementRef>;
 
-  items = [
+  isModalOpen: boolean[] = [];
+  showDialog: boolean = false;
 
+  items = [
     {
-      sl: 1 ,
+      sl: 1,
       title: 'ChuuNow - Food Application ',
-      description: ['Ionic','Angular 17', 'NestJS', 'Mongoose', 'Tailwind CSS'],
-      imageUrl: 'assets/5.png', 
-      link: ''
+      description: [
+        'Ionic',
+        'Angular 17',
+        'NestJS',
+        'Mongoose',
+        'Tailwind CSS',
+      ],
+      imageUrl: 'assets/5.png',
+      link: 'https://github.com/shabeelashraf5/chuuNow-FoodApp.git',
+      demo: 'Demo LiVE Update in Progress',
     },
 
     {
-      sl: 2 ,
+      sl: 2,
       title: 'TutorMate - Educational Platform ',
       description: ['Angular 17', 'NestJS', 'Mongoose', 'Tailwind CSS'],
-      imageUrl: 'assets/4.png', 
-      link: 'https://github.com/shabeelashraf5/TutorMate-EducationalPlatform'
+      imageUrl: 'assets/4.png',
+      link: 'https://github.com/shabeelashraf5/TutorMate-EducationalPlatform',
+      demo: 'Demo LiVE Update in Progress',
     },
-    
+
     {
-      sl: 3 ,
+      sl: 3,
       title: 'ERP - Supply Chain Management Portal',
-      description: ['NodeJS', 'ExpressJS', 'Angular 16', 'EC2', 'Mongoose', 'S3bucket', 'Tailwind CSS'],
+      description: [
+        'NodeJS',
+        'ExpressJS',
+        'Angular 16',
+        'EC2',
+        'Mongoose',
+        'S3bucket',
+        'Tailwind CSS',
+      ],
       imageUrl: 'assets/2.png',
-      link: 'https://github.com/shabeelashraf5/SCMS-PROJECT'
+      link: 'https://github.com/shabeelashraf5/SCMS-PROJECT',
+      demo: 'Demo LiVE Update in Progress',
     },
 
-
     {
-      sl: 4 ,
+      sl: 4,
       title: 'Cowbwoy Fitness - E Commerce Application',
-      description: ['NodeJS', 'ExpressJS', 'EJS', 'Mongoose', 'EC2', 'Bootstrap CSS'],
-      imageUrl: 'assets/1.png', 
-      link: 'https://github.com/shabeelashraf5/cowBwoyFitness-EcommerceApp.git'
+      description: [
+        'NodeJS',
+        'ExpressJS',
+        'EJS',
+        'Mongoose',
+        'EC2',
+        'Bootstrap CSS',
+      ],
+      imageUrl: 'assets/1.png',
+      link: 'https://github.com/shabeelashraf5/cowBwoyFitness-EcommerceApp.git',
+      demo: ' Demo LiVE Update in Progress',
     },
 
     {
-      sl: 5 ,
+      sl: 5,
       title: 'ManageX - Management Tool',
-      description: ['NodeJS', 'ExpressJS', 'Angular 17', 'Mongoose', 'Tailwind CSS'],
-      imageUrl: 'assets/3.png', 
-      link: 'https://github.com/shabeelashraf5/ManageX-ManagementTool.git'
+      description: [
+        'NodeJS',
+        'ExpressJS',
+        'Angular 17',
+        'Mongoose',
+        'Tailwind CSS',
+      ],
+      imageUrl: 'assets/3.png',
+      link: 'https://github.com/shabeelashraf5/ManageX-ManagementTool.git',
+      demo: 'Demo Live Update in Progress',
     },
-   
-   
   ];
 
-  constructor(){}
+  constructor() {}
 
   ngAfterViewInit(): void {
-  
     this.workItems.forEach((item, index) => {
       gsap.fromTo(
         item.nativeElement,
@@ -79,10 +118,13 @@ export class WorksComponent implements AfterViewInit {
         }
       );
     });
-    
   }
 
-  
+  toggleModal(index: number): void {
+    this.isModalOpen[index] = !this.isModalOpen[index]; // Toggle the modal for the specific index
+  }
 
+  closeDialog(index: number): void {
+    this.isModalOpen[index] = false; // Close the modal for the specific index
+  }
 }
-

@@ -1,17 +1,20 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import gsap from 'gsap';
-
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
- 
-
-  @Input() isLoading: boolean = false
+  @Input() isLoading: boolean = false;
 
   constructor(private router: Router) {}
 
@@ -22,7 +25,6 @@ export class NavbarComponent {
   }
 
   scrollToSection(section: string): void {
-   
     this.router.navigate([], { fragment: section }).then(() => {
       const element = document.getElementById(section);
       if (element) {
@@ -45,5 +47,4 @@ export class NavbarComponent {
       }
     );
   }
-
 }

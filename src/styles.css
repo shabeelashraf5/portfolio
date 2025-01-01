@@ -4,12 +4,9 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
-  }
-  
+  scroll-behavior: smooth;
+}
+
 .animate-spin {
-    animation: spin 1s linear infinite;
-  }
-
-
-  
+  animation: spin 1s linear infinite;
+}

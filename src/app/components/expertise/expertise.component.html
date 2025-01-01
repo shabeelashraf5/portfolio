@@ -1,0 +1,30 @@
+<div
+  class="min-h-screen bg-stone-900 flex flex-col items-center justify-center"
+>
+  <section id="what-i-offer" class="bg-stone-900 py-12">
+    <div class="container mx-auto px-4">
+      <h2
+        class="text-4xl font-bold text-center text-cyan-300 mb-8 saira-condensed-semibold"
+      >
+        What I Offer
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          #workItem
+          *ngFor="let offer of offers"
+          class="p-6 border border-cyan-300 rounded-lg bg-stone-900 shadow-md"
+        >
+          <h3
+            class="text-3xl font-semibold text-cyan-300 mb-4 saira-condensed-semibold"
+          >
+            {{ offer.title }}
+          </h3>
+          <p class="text-gray-400 text-xl md:text-xl saira-condensed-regular">
+            {{ offer.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
