@@ -95,7 +95,7 @@ export class WorksComponent implements AfterViewInit {
       ],
       imageUrl: 'assets/3.png',
       link: 'https://github.com/shabeelashraf5/ManageX-ManagementTool.git',
-      demo: 'Demo Live Update in Progress',
+      demo: 'https://managex-tool.netlify.app/',
     },
   ];
 
@@ -113,7 +113,7 @@ export class WorksComponent implements AfterViewInit {
           scrollTrigger: {
             trigger: item.nativeElement,
             start: 'top 80%',
-            toggleActions: 'play reset play reset', // Replays the animation
+            toggleActions: 'play reset play reset', 
           },
         }
       );
@@ -121,10 +121,17 @@ export class WorksComponent implements AfterViewInit {
   }
 
   toggleModal(index: number): void {
-    this.isModalOpen[index] = !this.isModalOpen[index]; // Toggle the modal for the specific index
+
+    const demoUrl = this.items[index].demo;
+    
+  if (demoUrl && demoUrl.startsWith('http')) {
+   
+    window.open(demoUrl, '_blank');
+  }
+    this.isModalOpen[index] = !this.isModalOpen[index];
   }
 
   closeDialog(index: number): void {
-    this.isModalOpen[index] = false; // Close the modal for the specific index
+    this.isModalOpen[index] = false; 
   }
 }
