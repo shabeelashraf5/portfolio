@@ -39,6 +39,7 @@ export class WorksComponent implements AfterViewInit {
       imageUrl: 'assets/5.png',
       link: 'https://github.com/shabeelashraf5/chuuNow-FoodApp.git',
       demo: 'Demo LiVE Update in Progress',
+      video: 'Stay tuned! The video will be uploaded soon'
     },
 
     {
@@ -48,6 +49,7 @@ export class WorksComponent implements AfterViewInit {
       imageUrl: 'assets/4.png',
       link: 'https://github.com/shabeelashraf5/TutorMate-EducationalPlatform',
       demo: 'Demo LiVE Update in Progress',
+      video: 'Stay tuned! The video will be uploaded soon'
     },
 
     {
@@ -65,6 +67,7 @@ export class WorksComponent implements AfterViewInit {
       imageUrl: 'assets/2.png',
       link: 'https://github.com/shabeelashraf5/SCMS-PROJECT',
       demo: 'Demo LiVE Update in Progress',
+      video: 'Stay tuned! The video will be uploaded soon'
     },
     {
       sl: 4,
@@ -79,6 +82,7 @@ export class WorksComponent implements AfterViewInit {
       imageUrl: 'assets/3.png',
       link: 'https://github.com/shabeelashraf5/ManageX-ManagementTool.git',
       demo: 'https://managex-tool.netlify.app/',
+      video: 'Stay tuned! The video will be uploaded soon'
     },
     {
       sl: 5,
@@ -94,6 +98,7 @@ export class WorksComponent implements AfterViewInit {
       imageUrl: 'assets/1.png',
       link: 'https://github.com/shabeelashraf5/cowBwoyFitness-EcommerceApp.git',
       demo: 'https://cowbwoyfitness-ecommerceapp.onrender.com',
+      video: 'Stay tuned! The video will be uploaded soon'
     },
   ];
 
@@ -128,6 +133,17 @@ export class WorksComponent implements AfterViewInit {
   }
     this.isModalOpen[index] = !this.isModalOpen[index];
   }
+
+  toggleVideo(index: number): void {
+
+    // const demoUrl = this.items[index].demo;
+    
+  // if (demoUrl && demoUrl.startsWith('http')) {
+   
+  //   window.open(demoUrl, '_blank');
+  // }
+    this.isModalOpen[index] = !this.isModalOpen[index];
+   }
 
   closeDialog(index: number): void {
     this.isModalOpen[index] = false; 
