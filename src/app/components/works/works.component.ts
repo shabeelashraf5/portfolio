@@ -66,25 +66,8 @@ export class WorksComponent implements AfterViewInit {
       link: 'https://github.com/shabeelashraf5/SCMS-PROJECT',
       demo: 'Demo LiVE Update in Progress',
     },
-
     {
       sl: 4,
-      title: 'Cowbwoy Fitness - E Commerce Application',
-      description: [
-        'NodeJS',
-        'ExpressJS',
-        'EJS',
-        'Mongoose',
-        'EC2',
-        'Bootstrap CSS',
-      ],
-      imageUrl: 'assets/1.png',
-      link: 'https://github.com/shabeelashraf5/cowBwoyFitness-EcommerceApp.git',
-      demo: ' Demo LiVE Update in Progress',
-    },
-
-    {
-      sl: 5,
       title: 'ManageX - Management Tool',
       description: [
         'NodeJS',
@@ -96,6 +79,21 @@ export class WorksComponent implements AfterViewInit {
       imageUrl: 'assets/3.png',
       link: 'https://github.com/shabeelashraf5/ManageX-ManagementTool.git',
       demo: 'https://managex-tool.netlify.app/',
+    },
+    {
+      sl: 5,
+      title: 'Cowbwoy Fitness - E Commerce Application',
+      description: [
+        'NodeJS',
+        'ExpressJS',
+        'EJS',
+        'Mongoose',
+        'EC2',
+        'Bootstrap CSS',
+      ],
+      imageUrl: 'assets/1.png',
+      link: 'https://github.com/shabeelashraf5/cowBwoyFitness-EcommerceApp.git',
+      demo: 'https://cowbwoyfitness-ecommerceapp.onrender.com',
     },
   ];
 
