@@ -108,7 +108,7 @@ export class WorksComponent implements AfterViewInit {
     this.workItems.forEach((item, index) => {
       gsap.fromTo(
         item.nativeElement,
-        { opacity: 0, y: 50 }, // Starting state
+        { opacity: 0, y: 50 }, 
         {
           opacity: 1,
           y: 0,
