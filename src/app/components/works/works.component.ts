@@ -98,7 +98,7 @@ export class WorksComponent implements AfterViewInit {
       imageUrl: 'assets/1.png',
       link: 'https://github.com/shabeelashraf5/cowBwoyFitness-EcommerceApp.git',
       demo: 'https://cowbwoyfitness-ecommerceapp.onrender.com',
-      video: 'Stay tuned! The video will be uploaded soon'
+      video: 'https://drive.google.com/file/d/1-gZQzbebgAP64zxQ7uTbHD0L5T0KUtz8/view?usp=drive_link'
     },
   ];
 
@@ -136,12 +136,13 @@ export class WorksComponent implements AfterViewInit {
 
   toggleVideo(index: number): void {
 
-    // const demoUrl = this.items[index].demo;
+    const demoUrl = this.items[index].video;
     
-  // if (demoUrl && demoUrl.startsWith('http')) {
+  if (demoUrl && demoUrl.startsWith('http')) {
    
-  //   window.open(demoUrl, '_blank');
-  // }
+    window.open(demoUrl, '_blank');
+  }
+ 
     this.isModalOpen[index] = !this.isModalOpen[index];
    }
 
