@@ -66,7 +66,7 @@ export class WorksComponent implements AfterViewInit {
       ],
       imageUrl: 'assets/2.png',
       link: 'https://github.com/shabeelashraf5/SCMS-PROJECT',
-      demo: 'Demo LiVE Update in Progress',
+      demo: 'https://inbi-erp.vercel.app',
       video: 'Stay tuned! The video will be uploaded soon'
     },
     {
