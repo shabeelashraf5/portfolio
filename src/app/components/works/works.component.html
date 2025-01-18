@@ -101,9 +101,9 @@
 
               <!-- Small Modal -->
               <div
-                [class.hidden]="!isModalOpen[i]"
-                [attr.aria-hidden]="!isModalOpen[i]"
-                [attr.inert]="!isModalOpen[i] ? true : null"
+                [class.hidden]="!islinkOpen[i]"
+                [attr.aria-hidden]="!islinkOpen[i]"
+                [attr.inert]="!islinkOpen[i] ? true : null"
                 id="small-modal-{{ i }}"
                 tabindex="-1"
                 class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
@@ -123,7 +123,7 @@
                         {{ items[i].title }}
                       </h3>
                       <button
-                        (click)="closeDialog(i)"
+                        (click)="closeDialogLink(i)"
                         type="button"
                         class="text-gray-400 bg-transparent hover:bg-cyan-300 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                       >
@@ -172,9 +172,9 @@
 
               <!-- Small Modal -->
               <div
-                [class.hidden]="!isModalOpen[i]"
-                [attr.aria-hidden]="!isModalOpen[i]"
-                [attr.inert]="!isModalOpen[i] ? true : null"
+                [class.hidden]="!isVideoOpen[i]"
+                [attr.aria-hidden]="!isVideoOpen[i]"
+                [attr.inert]="!isVideoOpen[i] ? true : null"
                 id="small-modal-{{ i }}"
                 tabindex="-1"
                 class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
@@ -194,7 +194,7 @@
                         {{ items[i].title }}
                       </h3>
                       <button
-                        (click)="closeDialog(i)"
+                        (click)="closeDialogVideo(i)"
                         type="button"
                         class="text-gray-400 bg-transparent hover:bg-cyan-300 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                       >

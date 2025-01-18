@@ -22,7 +22,8 @@ gsap.registerPlugin(ScrollTrigger);
 export class WorksComponent implements AfterViewInit {
   @ViewChildren('workItem') workItems!: QueryList<ElementRef>;
 
-  isModalOpen: boolean[] = [];
+  islinkOpen: boolean[] = [];
+  isVideoOpen: boolean[] = [];
   showDialog: boolean = false;
 
   items = [
@@ -126,12 +127,13 @@ export class WorksComponent implements AfterViewInit {
   toggleModal(index: number): void {
 
     const demoUrl = this.items[index].demo;
+    console.log(demoUrl); 
     
   if (demoUrl && demoUrl.startsWith('http')) {
    
     window.open(demoUrl, '_blank');
   }
-    this.isModalOpen[index] = !this.isModalOpen[index];
+    this.islinkOpen[index] = !this.islinkOpen[index];
   }
 
   toggleVideo(index: number): void {
@@ -143,10 +145,15 @@ export class WorksComponent implements AfterViewInit {
     window.open(demoUrl, '_blank');
   }
  
-    this.isModalOpen[index] = !this.isModalOpen[index];
+    this.isVideoOpen[index] = !this.isVideoOpen[index];
    }
 
-  closeDialog(index: number): void {
-    this.isModalOpen[index] = false; 
+
+  closeDialogLink(index: number): void {
+    this.islinkOpen[index] = false; 
+  }
+
+  closeDialogVideo(index: number): void {
+    this.isVideoOpen[index] = false; 
   }
 }
