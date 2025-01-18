@@ -55,7 +55,7 @@ export class WorksComponent implements AfterViewInit {
 
     {
       sl: 3,
-      title: 'ERP - Supply Chain Management Portal',
+      title: 'INBI - ERP System',
       description: [
         'NodeJS',
         'ExpressJS',
