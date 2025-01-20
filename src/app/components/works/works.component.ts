@@ -83,7 +83,7 @@ export class WorksComponent implements AfterViewInit {
       imageUrl: 'assets/3.png',
       link: 'https://github.com/shabeelashraf5/ManageX-ManagementTool.git',
       demo: 'https://managex-tool.netlify.app/',
-      video: 'Stay tuned! The video will be uploaded soon'
+      video: 'https://drive.google.com/file/d/1OAfvsZJrphmuyZ9o7P7Nzqn3fpYkLFTN/view?usp=drive_link'
     },
     {
       sl: 5,
