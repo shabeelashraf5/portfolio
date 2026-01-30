@@ -30,6 +30,7 @@ export class WorksComponent implements AfterViewInit {
     {
       sl: 1,
       title: 'ChuuNow - Food Application ',
+      status: 'Coding in Progress',
       description: [
         'Ionic',
         'Angular 17',
@@ -46,6 +47,7 @@ export class WorksComponent implements AfterViewInit {
     {
       sl: 2,
       title: 'TutorMate - Educational Platform ',
+      status: 'Coding in Progress',
       description: ['Angular 17', 'NestJS', 'Mongoose', 'Tailwind CSS'],
       imageUrl: 'assets/4.png',
       link: 'https://github.com/shabeelashraf5/TutorMate-EducationalPlatform',
@@ -103,21 +105,21 @@ export class WorksComponent implements AfterViewInit {
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
   ngAfterViewInit(): void {
     this.workItems.forEach((item, index) => {
       gsap.fromTo(
         item.nativeElement,
-        { opacity: 0, y: 50 }, 
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.5,
           scrollTrigger: {
             trigger: item.nativeElement,
-            start: 'top 80%',
-            toggleActions: 'play reset play reset', 
+            start: 'top 90%',
+            toggleActions: 'play none none none',
           },
         }
       );
@@ -127,33 +129,33 @@ export class WorksComponent implements AfterViewInit {
   toggleModal(index: number): void {
 
     const demoUrl = this.items[index].demo;
-    console.log(demoUrl); 
-    
-  if (demoUrl && demoUrl.startsWith('http')) {
-   
-    window.open(demoUrl, '_blank');
-  }
+    console.log(demoUrl);
+
+    if (demoUrl && demoUrl.startsWith('http')) {
+
+      window.open(demoUrl, '_blank');
+    }
     this.islinkOpen[index] = !this.islinkOpen[index];
   }
 
   toggleVideo(index: number): void {
 
     const demoUrl = this.items[index].video;
-    
-  if (demoUrl && demoUrl.startsWith('http')) {
-   
-    window.open(demoUrl, '_blank');
-  }
- 
+
+    if (demoUrl && demoUrl.startsWith('http')) {
+
+      window.open(demoUrl, '_blank');
+    }
+
     this.isVideoOpen[index] = !this.isVideoOpen[index];
-   }
+  }
 
 
   closeDialogLink(index: number): void {
-    this.islinkOpen[index] = false; 
+    this.islinkOpen[index] = false;
   }
 
   closeDialogVideo(index: number): void {
-    this.isVideoOpen[index] = false; 
+    this.isVideoOpen[index] = false;
   }
 }

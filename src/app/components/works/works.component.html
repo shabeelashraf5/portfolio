@@ -1,236 +1,145 @@
-<div
-  class="min-h-screen bg-stone-900 flex flex-col items-center justify-center"
->
-  <div class="text-center md:mt-20 lg:mt-20 mt-12">
-    <h5
-      class="mb-2 md:text-5xl text-3xl font-bold tracking-tight text-cyan-300 dark:text-white saira-condensed-semibold"
-    >
-      My Works
-    </h5>
+<div id="works" class="min-h-screen bg-[#0c0a09] pt-28 pb-20 relative overflow-hidden">
+
+  <!-- Unique Background Atmosphere for Works -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[120px] opacity-30"></div>
+    <div class="absolute bottom-1/4 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] opacity-30">
+    </div>
   </div>
 
-  <div class="w-full relative">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-      <div
-        #workItem
-        *ngFor="let item of items; let i = index"
-        class="max-w-sm mx-auto bg-stone-900 border border-cyan-300 rounded-3xl shadow-lg dark:bg-gray-800 dark:border-gray-700 relative"
-      >
-        <!-- Ribbon for specific item -->
-        <div *ngIf="item.sl === 1" class="absolute right-0 top-60 h-16 w-16">
-          <div
-            class="absolute transform rotate-45 bg-green-600 text-center text-white font-semibold py-1 right-[-35px] top-[32px] w-[170px]"
-          >
-            Coding in progress
-          </div>
+  <div class="container mx-auto px-6 relative z-10">
+
+    <!-- Centered Header (Differentiates from Expertise split layout) -->
+    <div class="max-w-3xl mx-auto text-center mb-20 animate-fade-in-up">
+      <h5 class="text-cyan-400 font-outfit font-bold text-xs tracking-[0.4em] uppercase mb-4">Portfolio</h5>
+      <h2 class="text-3xl md:text-5xl font-bold text-white font-outfit mb-6 tracking-tight">
+        SELECTED <span class="gradient-text">PROJECTS</span>
+      </h2>
+      <div class="w-12 h-1 bg-cyan-500 mx-auto rounded-full mb-6"></div>
+      <p class="text-gray-400 text-base md:text-lg font-inter font-light leading-relaxed">
+        Showcasing a range of professional applications built with a focus on performance, scalability, and user
+        experience.
+      </p>
+    </div>
+
+    <!-- 3-Column Grid (Differentiates from Expertise 2-column grid) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div *ngFor="let item of items; let i = index" #workItem
+        class="group relative flex flex-col h-full bg-[#121212] border border-white/5 p-7 rounded-2xl hover:border-cyan-500/30 transition-all duration-500 transform hover:-translate-y-2">
+
+        <!-- Centric Glow Effect Container -->
+        <div
+          class="absolute inset-0 bg-cyan-500/0 group-hover:bg-cyan-500/[0.03] rounded-2xl transition-all duration-500">
         </div>
 
-        <a>
-          <img
-            class="rounded-t-3xl w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110 opacity-70"
-            [src]="item.imageUrl"
-            alt=""
-          />
-        </a>
-        <div class="p-5">
-          <a>
-            <h5
-              class="mb-2 text-xl md:text-2xl font-bold tracking-tight text-center text-cyan-300 dark:text-white saira-condensed-semibold"
-            >
-              {{ item.title }}
-            </h5>
-          </a>
-          <div class="mb-3 flex flex-wrap gap-2">
-            <ng-container *ngFor="let keyword of item.description">
-              <button
-                type="button"
-                class="px-3 py-1 text-gray-400 bg-transparent border border-cyan-300 rounded-full text-sm focus:ring-4 focus:outline-none focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:focus:ring-blue-800"
-              >
-                {{ keyword }}
-              </button>
-            </ng-container>
+        <div class="relative z-10 flex flex-col h-full">
+          <!-- Small Rounded Thumbnail (Visual Identity) -->
+          <div
+            class="w-14 h-14 rounded-xl overflow-hidden mb-6 border border-white/10 group-hover:border-cyan-500/50 transition-all duration-500 shrink-0">
+            <img [src]="item.imageUrl" [alt]="item.title" class="w-full h-full object-cover">
           </div>
-          <div class="flex justify-center items-center">
-            <a [href]="item.link" target="_blank" rel="noopener noreferrer">
-              <button
-                type="button"
-                class="mtext-blue-700 border border-cyan-300 hover:bg-gray-100 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
-              >
-                <svg
-                  class="w-6 h-6 text-cyan-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
-                    clip-rule="evenodd"
-                  />
+
+          <!-- Project Numbering (Subtle, top-right) -->
+          <div
+            class="absolute top-0 right-0 text-xl font-bold text-white/5 group-hover:text-cyan-500/10 font-outfit transition-colors">
+            P-0{{ i + 1 }}
+          </div>
+
+          <!-- Status Badge (Fixed height to prevent alignment issues) -->
+          <div class="h-6 mb-2">
+            <div *ngIf="item.status">
+              <span
+                class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-[9px] font-bold uppercase tracking-wider">
+                <span class="w-1 h-1 rounded-full bg-yellow-500 animate-pulse"></span>
+                {{ item.status }}
+              </span>
+            </div>
+          </div>
+
+          <h3 class="text-xl text-white font-bold font-outfit mb-3 group-hover:text-cyan-400 transition-colors">
+            {{ item.title }}
+          </h3>
+
+          <!-- Tech Pill Badges -->
+          <div class="flex flex-wrap gap-2 mb-8">
+            <span *ngFor="let tech of item.description.slice(0, 3)"
+              class="px-2.5 py-1 text-[10px] bg-cyan-500/5 border border-cyan-500/20 text-cyan-400/80 rounded-full font-medium tracking-wide">
+              {{ tech }}
+            </span>
+          </div>
+
+          <!-- Differentiated Action Layout - Pushed to Bottom -->
+          <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+            <div class="flex items-center gap-3">
+              <a [href]="item.link" target="_blank"
+                class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg hover:bg-cyan-500/20 hover:text-cyan-400 transition-all text-gray-500"
+                title="View Code">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+              </a>
+              <button (click)="toggleModal(i)"
+                class="w-9 h-9 flex items-center justify-center bg-white/5 rounded-lg hover:bg-green-500/20 hover:text-green-400 transition-all text-gray-500"
+                title="Live Preview">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </button>
-            </a>
+            </div>
 
-            <a >
-              <button
-                (click)="toggleModal(i)"
-                type="button"
-                class="mtext-blue-700 border border-cyan-300 ml-2 hover:bg-gray-100 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
-              >
-                <svg
-                  class="w-6 h-6 text-cyan-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13.213 9.787a3.391 3.391 0 0 0-4.795 0l-3.425 3.426a3.39 3.39 0 0 0 4.795 4.794l.321-.304m-.321-4.49a3.39 3.39 0 0 0 4.795 0l3.424-3.426a3.39 3.39 0 0 0-4.794-4.795l-1.028.961"
-                  />
-                </svg>
-              </button>
-
-              <!-- Small Modal -->
-              <div
-                [class.hidden]="!islinkOpen[i]"
-                [attr.aria-hidden]="!islinkOpen[i]"
-                [attr.inert]="!islinkOpen[i] ? true : null"
-                id="small-modal-{{ i }}"
-                tabindex="-1"
-                class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-              >
-                <div class="relative w-full max-w-md max-h-full">
-                  <!-- Modal content -->
-                  <div
-                    class="relative bg-stone-900 rounded-lg border border-cyan-300 shadow"
-                  >
-                    <!-- Modal header -->
-                    <div
-                      class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-cyan-300"
-                    >
-                      <h3
-                        class="text-2xl font-medium text-cyan-300 saira-condensed-semibold"
-                      >
-                        {{ items[i].title }}
-                      </h3>
-                      <button
-                        (click)="closeDialogLink(i)"
-                        type="button"
-                        class="text-gray-400 bg-transparent hover:bg-cyan-300 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        <svg
-                          class="w-3 h-3"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 14 14"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                          />
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                      </button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-4 md:p-5 space-y-4">
-                      <p
-                        class="text-xl leading-relaxed text-gray-400 saira-condensed-semibold"
-                      >
-                        {{ items[i].demo }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <a >
-              <button
-                (click)="toggleVideo(i)"
-                type="button"
-                class="mtext-blue-700 border border-cyan-300 ml-2 hover:bg-gray-100 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800 dark:hover:bg-blue-500"
-              >
-              <svg class="w-6 h-6 text-cyan-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M10 3v4a1 1 0 0 1-1 1H5m14-4v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1ZM9 12h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Zm5.697 2.395v-.733l1.269-1.219v2.984l-1.268-1.032Z"/>
+            <button (click)="toggleVideo(i)"
+              class="group/btn flex items-center gap-2 text-[10px] font-bold text-gray-500 hover:text-white transition-all tracking-[0.1em] uppercase">
+              <span>View Case</span>
+              <svg class="w-3 h-3 transform group-hover/btn:translate-x-1 transition-transform" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
               </svg>
-              
-              </button>
-
-              <!-- Small Modal -->
-              <div
-                [class.hidden]="!isVideoOpen[i]"
-                [attr.aria-hidden]="!isVideoOpen[i]"
-                [attr.inert]="!isVideoOpen[i] ? true : null"
-                id="small-modal-{{ i }}"
-                tabindex="-1"
-                class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
-              >
-                <div class="relative w-full max-w-md max-h-full">
-                  <!-- Modal content -->
-                  <div
-                    class="relative bg-stone-900 rounded-lg border border-cyan-300 shadow"
-                  >
-                    <!-- Modal header -->
-                    <div
-                      class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-cyan-300"
-                    >
-                      <h3
-                        class="text-2xl font-medium text-cyan-300 saira-condensed-semibold"
-                      >
-                        {{ items[i].title }}
-                      </h3>
-                      <button
-                        (click)="closeDialogVideo(i)"
-                        type="button"
-                        class="text-gray-400 bg-transparent hover:bg-cyan-300 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        <svg
-                          class="w-3 h-3"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 14 14"
-                        >
-                          <path
-                            stroke="currentColor"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                          />
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                      </button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-4 md:p-5 space-y-4">
-                      <p
-                        class="text-xl leading-relaxed text-gray-400 saira-condensed-semibold"
-                      >
-                        {{ items[i].video }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
     </div>
   </div>
+
+  <!-- Video Modal Override -->
+  <div *ngFor="let item of items; let i = index">
+    <div *ngIf="isVideoOpen[i]"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md transition-opacity"
+      (click)="closeDialogVideo(i)">
+      <div class="relative bg-[#0c0a09] w-full max-w-lg rounded-3xl border border-white/10 shadow-2xl p-10 text-center"
+        (click)="$event.stopPropagation()">
+        <h3 class="text-xl text-white font-bold mb-4 font-outfit">{{ item.title }} - Demo</h3>
+        <p class="text-gray-400 text-sm mb-10 font-inter leading-relaxed">{{ item.video }}</p>
+        <button (click)="closeDialogVideo(i)"
+          class="w-full py-3 bg-white/5 hover:bg-cyan-500/20 border border-white/10 hover:border-cyan-500/50 text-white rounded-xl transition-all font-outfit text-xs uppercase tracking-widest font-bold">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Link Modal Override -->
+  <div *ngFor="let item of items; let i = index">
+    <div *ngIf="islinkOpen[i]"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md transition-opacity"
+      (click)="closeDialogLink(i)">
+      <div class="relative bg-[#0c0a09] w-full max-w-lg rounded-3xl border border-white/10 shadow-2xl p-10 text-center"
+        (click)="$event.stopPropagation()">
+        <h3 class="text-xl text-white font-bold mb-4 font-outfit">Live Preview</h3>
+        <p class="text-gray-400 text-sm mb-10 font-inter leading-relaxed">{{ item.demo }}</p>
+        <button (click)="closeDialogLink(i)"
+          class="w-full py-3 bg-white/5 hover:bg-green-500/20 border border-white/10 hover:border-green-500/50 text-white rounded-xl transition-all font-outfit text-xs uppercase tracking-widest font-bold">
+          Close Preview
+        </button>
+      </div>
+    </div>
+  </div>
+
 </div>

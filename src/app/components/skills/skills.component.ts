@@ -27,15 +27,34 @@ export class SkillsComponent implements AfterViewInit {
     'Developed dynamic web applications using Angular, Node JS, Express JS, Nest JS and MongoDB. I pursued MEAN stack development through self-study, demonstrating a strong ability to learn and adapt independently. During this time, I successfully completed four major projects and am still working on additional ones, continuously deepening my understanding of Full Stack development and honing my ability to create scalable and efficient solutions.';
 
   introduction: string =
-    'I am a dedicated and self-driven Full-Stack Developer with hands-on experience in Angular, Node JS, Express JS, Nest JS and MongoDB. Over the past year, I’ve honed my skills by building scalable web applications. My passion lies in solving complex problems, learning emerging technologies, and delivering efficient, high-quality code that meets user needs.';
+    'Passionate Full Stack Developer with a unique journey from 8 years in a different industry to software development, providing me with a fresh perspective and strong problem-solving abilities. I specialize in building user-centric web applications, combining functionality with intuitive design. With a solid foundation in front-end and back-end development, I am proficient in Next.js, PostgreSQL, Angular, Node.js, Express.js, MongoDB, and NestJS.';
+
+  experiences = [
+    {
+      company: 'Cyber Sapient',
+      role: 'Full Stack Developer',
+      type: 'Full-time',
+      period: 'May 2025 - Present',
+      location: 'Kerala, India',
+      description: 'Developing high-performance full-stack applications using Next.js and PostgreSQL. Focused on building scalable features and optimizing performance.'
+    },
+    {
+      company: 'Cyber Sapient',
+      role: 'Full Stack Developer Intern',
+      type: 'Internship',
+      period: 'Jan 2025 - Apr 2025',
+      location: 'Remote',
+      description: 'Leveraged Next.js for dynamic UIs and PostgreSQL for efficient data management. Contributed to RESTful API integrations and performance optimization in an agile environment.'
+    }
+  ];
 
   contributions: string[] = [
-    'Frontend Development: Responsive UI design with Angular and Tailwind CSS.',
-    'Backend Development: Backend Development: Scalable RESTful APIs with Node.js, Express.js, and MongoDB.',
-    'End-to-End Development: Managed projects from requirements to deployment.',
-    'Version Control & Deployment: Expertise in Git and AWS services like S3, EC2, and Route 53.',
-    'Payment Integration: Integrated secure payment gateways like Stripe to facilitate seamless online transactions.',
-    'Performance & Security: Optimized application performance and secure coding.',
+    'Frontend Development: Professional UIs with Next.js, Angular and Tailwind CSS.',
+    'Backend Development: Scalable systems with PostgreSQL, Node.js and MongoDB.',
+    'End-to-End Development: Architecting projects from concepts to deployment.',
+    'Cloud & DevOps: Expertise in AWS (S3, EC2, Route 53) and Git workflows.',
+    'Payment Architecture: Seamless Stripe integrations for secure transactions.',
+    'Performance & Logic: Optimized code for speed, security, and scalability.',
   ];
 
   conclusion: string =
@@ -49,11 +68,11 @@ export class SkillsComponent implements AfterViewInit {
         {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.5,
           scrollTrigger: {
             trigger: item.nativeElement,
             start: 'top 90%',
-            toggleActions: 'play reset play reset', // Replays the animation
+            toggleActions: 'play none none none',
           },
         }
       );
@@ -66,11 +85,11 @@ export class SkillsComponent implements AfterViewInit {
         {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.5,
           scrollTrigger: {
             trigger: item.nativeElement,
             start: 'top 90%',
-            toggleActions: 'play reset play reset',
+            toggleActions: 'play none none none',
           },
         }
       );

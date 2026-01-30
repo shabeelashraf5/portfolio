@@ -10,20 +10,20 @@ export class DashboardComponent implements OnInit {
   fullName: string = 'Mohamed Shabeel Ashraf';
   position: string = 'Full Stack Developer';
   mean: string = 'Mean Stack';
-  ionic: string = 'Ionic Mobile Developer';
+
   displayedText: string = '';
   typingSpeed: number = 100;
   displayedPos: string = '';
   greeting: string = "Hello ! I'm ";
   myself: string = "I'm";
   about: string =
-    'Passionate full stack developer specializing in Angular, Node JS, Express JS, Nest JS and MongoDB. I have a strong background in building dynamic web applications.  I thrive in both collaborative and independent environments. Explore my portfolio to see my work!';
+    'Passionate Full Stack Developer specializing in high-performance web applications with Next.js and PostgreSQL. I have also developed extensive personal projects using Angular, NestJS, Express, and MongoDB, focusing on creating scalable and maintainable full-stack solutions.';
   githubLink: string = 'https://github.com/shabeelashraf5';
   linkedInLink: string =
     'https://www.linkedin.com/in/mohamed-shabeel-ashraf-8abb4938/';
   typing = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   @ViewChild('audioPlayer') audioPlayer!: ElementRef<HTMLAudioElement>;
   isPlaying: boolean = false;
@@ -50,7 +50,11 @@ export class DashboardComponent implements OnInit {
   // }
 
   typeName() {
-    const phrases = ['Ionic Mobile Developer', 'MEAN Stack Developer'];
+    const phrases = [
+      'Next JS + PostgreSQL Developer',
+      'Full Stack Developer',
+      'Scalable Web Architect',
+    ];
     let index = 0;
     let charIndex = 0;
     let typing = true; // Flag to control typing and erasing

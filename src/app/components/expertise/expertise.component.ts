@@ -60,11 +60,11 @@ export class ExpertiseComponent implements AfterViewInit {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.5,
           scrollTrigger: {
             trigger: item.nativeElement,
-            start: 'top 80%',
-            toggleActions: 'play reset play reset', // Replays the animation
+            start: 'top 90%',
+            toggleActions: 'play none none none',
           },
         }
       );

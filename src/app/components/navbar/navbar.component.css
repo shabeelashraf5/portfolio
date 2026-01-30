@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;600;700&display=swap');
-
-.saira-condensed-regular {
-  font-family: 'Saira Condensed', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* Cleaned up modern Navbar styles */
+.nav-link {
+  position: relative;
+  letter-spacing: 0.15em;
 }
 
-.saira-condensed-semibold {
-  font-family: 'Saira Condensed', sans-serif;
-  font-weight: 600;
-  font-style: normal;
+.active {
+  color: #22d3ee !important;
+  /* cyan-400 */
 }
 
-.saira-condensed-bold {
-  font-family: 'Saira Condensed', sans-serif;
-  font-weight: 700;
-  font-style: normal;
+.active span {
+  width: 100% !important;
+  opacity: 1 !important;
+}
+
+/* Mobile menu animations */
+@media (max-width: 768px) {
+  ul {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
 }

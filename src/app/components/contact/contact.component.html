@@ -1,54 +1,77 @@
-<div
-  class="min-h-screen bg-stone-900 flex flex-col items-center justify-center"
->
-  <div class="text-center">
-    <h5
-      class="mb-2 text-xl font-bold tracking-tight text-cyan-600 dark:text-white saira-condensed-semibold"
-    >
-      Get In Touch
-    </h5>
-    <h5
-      class="mb-2 text-5xl font-bold tracking-tight text-cyan-300 dark:text-white saira-condensed-semibold"
-    >
-      Contact Me
-    </h5>
+<div id="contact" class="bg-[#0c0a09] relative pt-28 pb-24 overflow-hidden">
+
+  <!-- Minimal Background Decor -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-900/5 rounded-full blur-[150px]">
+    </div>
+    <div
+      class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]">
+    </div>
   </div>
 
-  <div class="flex-col flex items-center justify-center m-10">
-    <a
-      class="block max-w-7xl p-6 bg-stone-900 border border-cyan-300 rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-    >
-      <div class="flex-grow flex justify-between gap-10">
-        <div>
-          <h5
-            class="mb-2 text-2xl font-bold tracking-tight text-gray-400 dark:text-white saira-condensed-semibold"
-          >
-            Email: {{ email }}
-          </h5>
-        </div>
+  <div class="container mx-auto px-6 relative z-10 w-full max-w-4xl">
 
-        <div>
-          <a [href]="linkedInLink" target="_blank" rel="noopener noreferrer">
-            <button
-              type="button"
-              class="mtext-blue-700 border border-cyan-300 hover:text-white focus:ring-4 focus:outline-none font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white hover:bg-cyan-100"
-            >
-              <!-- <svg class="w-6 h-6 text-cyan-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
-            <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
-        </svg> -->
-              <lord-icon
-                class="w-6 h-6"
-                src="assets/lin.json"
-                id="myLottieIcon"
-              >
-              </lord-icon>
-            </button>
-          </a>
+    <!-- Centered Header -->
+    <div class="text-center mb-16 animate-fade-in-up">
+      <h5 class="text-cyan-400 font-outfit font-bold text-xs tracking-[0.4em] uppercase mb-4">Availability</h5>
+      <h2 class="text-3xl md:text-5xl font-bold text-white font-outfit mb-6 tracking-tight">
+        LET'S <span class="gradient-text">CONNECT</span>
+      </h2>
+      <div class="w-12 h-1 bg-cyan-500 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Contact Bento / Glass Card -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in-up delay-200">
+
+      <!-- Email Tile -->
+      <a href="mailto:{{email}}"
+        class="glass-panel p-8 rounded-3xl group hover-glow transition-all duration-500 flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-8">
+          <div
+            class="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center text-cyan-400 border border-cyan-500/20 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
+            </svg>
+          </div>
+          <span class="text-gray-600 font-outfit text-xs font-bold tracking-widest uppercase">Direct Link</span>
         </div>
-      </div>
-    </a>
+        <div>
+          <p class="text-gray-500 text-xs font-inter font-medium tracking-wider uppercase mb-2">Send me an email</p>
+          <h3 class="text-xl md:text-2xl text-white font-bold font-outfit group-hover:text-cyan-400 transition-colors">
+            {{ email }}</h3>
+        </div>
+      </a>
+
+      <!-- LinkedIn Tile -->
+      <a [href]="linkedInLink" target="_blank"
+        class="glass-panel p-8 rounded-3xl group hover-glow transition-all duration-500 flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-8">
+          <div
+            class="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 border border-blue-500/20 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </div>
+          <span class="text-gray-600 font-outfit text-xs font-bold tracking-widest uppercase">Professional
+            Network</span>
+        </div>
+        <div>
+          <p class="text-gray-500 text-xs font-inter font-medium tracking-wider uppercase mb-2">Let's stay in touch</p>
+          <h3 class="text-xl md:text-2xl text-white font-bold font-outfit group-hover:text-blue-400 transition-colors">
+            Connect on LinkedIn</h3>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Final Footer Component -->
+    <div class="mt-24 pt-12 border-t border-white/5 opacity-50">
+      <app-footer></app-footer>
+    </div>
+
   </div>
-
-  <app-footer></app-footer>
 </div>

@@ -1,19 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;600;700&display=swap');
-
-.saira-condensed-regular {
-  font-family: 'Saira Condensed', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* Modern Contact styles */
+.hover-glow:hover {
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.05);
+  border-color: rgba(6, 182, 212, 0.2);
+  transform: translateY(-4px);
 }
 
-.saira-condensed-semibold {
-  font-family: 'Saira Condensed', sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.saira-condensed-bold {
-  font-family: 'Saira Condensed', sans-serif;
-  font-weight: 700;
-  font-style: normal;
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
 }

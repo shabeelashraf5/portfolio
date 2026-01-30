@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, Input, ViewChild } from '@angular/core';
 import { ChatbotService } from '../../service/chatbot.service';
 
 @Component({
@@ -7,84 +7,113 @@ import { ChatbotService } from '../../service/chatbot.service';
   styleUrl: './chatbot.component.css',
 })
 export class ChatbotComponent {
+  @Input() isLoading: boolean = false;
+  @ViewChild('scrollContainer') private scrollContainer!: ElementRef;
+
   private chatbotservice = inject(ChatbotService);
 
   isChatboxVisible = false;
   message = '';
   chatMessages = [{ sender: 'sHabEel', message: 'Hello, how can I help you?' }];
   isTyping!: boolean;
+  usedQuestions: Set<string> = new Set();
 
-  predefinedQuestions = [
-    'Are you looking for a job?',
-    'What is your experience?',
-    'What is your notice period?',
-    'Are you available for interviews?',
-    'Do you prefer remote work?',
-    'Are you interested in full-time job?',
-    'Are you willing to work weekends?',
-    'Are you interested in freelancing?',
-    'Do you have experience in freelance projects?',
-    'Good Bye',
-  ];
-
-  displayedQuestions = this.predefinedQuestions.slice(0, 1);
+  displayedQuestions = this.chatbotservice.getLocalQuestionPool().slice(0, 3);
 
   toggleChatbox() {
     this.isChatboxVisible = !this.isChatboxVisible;
+    if (this.isChatboxVisible) {
+      setTimeout(() => this.scrollToBottom(), 100);
+    }
   }
 
   closeChatbox() {
     this.isChatboxVisible = false;
   }
 
+  private normalize(text: string): string {
+    return text.toLowerCase().replace(/[?.,!]/g, '').trim();
+  }
+
   sendMessage(message: string) {
     if (message.trim()) {
-      console.log('User Input:', message);
-      this.chatMessages.push({ sender: 'You', message: message });
-
+      const userMessage = message.trim();
+      this.chatMessages.push({ sender: 'You', message: userMessage });
+      this.message = '';
       this.isTyping = true;
 
-      this.chatbotservice.predictResponse(message).then((response) => {
-        setTimeout(() => {
-          console.log('Chatbot Response:', response);
+      const pool = this.chatbotservice.getLocalQuestionPool();
+      const normalizedUserMsg = this.normalize(userMessage);
+
+      // Mark as used if it matches any pool question (case/punctuation agnostic)
+      const matchedFromPool = pool.find(q => this.normalize(q) === normalizedUserMsg);
+      if (matchedFromPool) {
+        this.usedQuestions.add(matchedFromPool);
+      }
+
+      setTimeout(() => this.scrollToBottom(), 10);
+
+      // Simulate a 2-second typing delay for a more natural feel
+      setTimeout(() => {
+        this.chatbotservice.predictResponse(userMessage).then((response) => {
           this.chatMessages.push({ sender: 'sHabEel', message: response });
           this.isTyping = false;
-        }, 3000);
-      });
+          setTimeout(() => this.scrollToBottom(), 10);
 
-      this.message = '';
-
-      this.updateQuestions();
+          // Fetch dynamic suggestions or cycle local ones
+          this.chatbotservice.getSuggestions(userMessage, response).then((suggestions) => {
+            if (suggestions.length > 0) {
+              // When not using Gemini, we cycle the local pool
+              this.updateSuggestions();
+            }
+          });
+        });
+      }, 2000);
     }
   }
 
-  updateQuestions() {
-    this.predefinedQuestions.shift();
+  updateSuggestions() {
+    const pool = this.chatbotservice.getLocalQuestionPool();
+    let currentSuggestions = [...this.displayedQuestions];
 
-    if (this.predefinedQuestions.length) {
-      this.displayedQuestions = this.predefinedQuestions.slice(0, 1);
+    // Replace any question in currentSuggestions that is now in usedQuestions
+    for (let i = 0; i < currentSuggestions.length; i++) {
+      if (this.usedQuestions.has(currentSuggestions[i])) {
+        // Find a question in pool not already in currentSuggestions AND not used
+        const available = pool.filter(q =>
+          !this.usedQuestions.has(q) &&
+          !currentSuggestions.includes(q)
+        );
+
+        if (available.length > 0) {
+          currentSuggestions[i] = available[0];
+        } else {
+          // If no more unused questions are available in the pool, 
+          // stop showing this suggestion tile.
+          currentSuggestions[i] = '';
+        }
+      }
     }
+
+    this.displayedQuestions = currentSuggestions.filter(q => q !== ''); // Remove empty slots
+    setTimeout(() => this.scrollToBottom(), 100);
   }
+
+  private scrollToBottom(): void {
+    try {
+      this.scrollContainer.nativeElement.scrollTop = this.scrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
+  }
+
+  // Dynamic updates handled in sendMessage now
+  updateQuestions() { }
 
   refreshChatbox() {
-    this.chatMessages = [];
+    this.chatMessages = [{ sender: 'sHabEel', message: 'Hello, how can I help you?' }];
     this.isTyping = false;
     this.message = '';
-    this.predefinedQuestions = [
-      'Are you looking for a job?',
-      'What is your notice period?',
-      'Are you open to relocation?',
-      'Are you available for interviews?',
-      'Do you prefer remote work?',
-      'Are you interested in full-time job?',
-      'Are you willing to work weekends?',
-      'Are you interested in freelancing?',
-      'Do you have experience in freelance projects?',
-      'Good Bye',
-    ];
-    this.chatMessages = [
-      { sender: 'sHabEel', message: 'Hello, how can I help you?' },
-    ];
-    this.displayedQuestions = this.predefinedQuestions.slice(0, 1);
+    this.usedQuestions.clear();
+    this.displayedQuestions = this.chatbotservice.getLocalQuestionPool().slice(0, 3);
+    setTimeout(() => this.scrollToBottom(), 10);
   }
 }
