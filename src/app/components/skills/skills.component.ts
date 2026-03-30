@@ -29,6 +29,33 @@ export class SkillsComponent implements AfterViewInit {
   introduction: string =
     'Passionate Full Stack Developer with a unique journey from 8 years in a different industry to software development, providing me with a fresh perspective and strong problem-solving abilities. I specialize in building user-centric web applications, combining functionality with intuitive design. With a solid foundation in front-end and back-end development, I am proficient in Next.js, PostgreSQL, Angular, Node.js, Express.js, MongoDB, and NestJS.';
 
+  storyPhases = [
+    {
+      title: 'The Foundation',
+      desc: 'A unique journey from 8 years in a different industry to software development, providing me with a fresh perspective and strong problem-solving abilities.',
+      icon: '🏗️',
+      color: 'cyan'
+    },
+    {
+      title: 'The Focus',
+      desc: 'Expertise in building user-centric web applications, combining complex functionality with modern, intuitive design.',
+      icon: '⚡',
+      color: 'purple'
+    },
+    {
+      title: 'The Tech Stack',
+      desc: 'Proficient in modern technologies like Next.js, PostgreSQL, Angular, Node.js, Express.js, MongoDB, and NestJS.',
+      icon: '🚀',
+      color: 'emerald'
+    }
+  ];
+
+  storyStats = [
+    { label: 'Engineering', value: 'Full-Stack' },
+    { label: 'Intelligence', value: 'AI & RAG' },
+    { label: 'Architecture', value: 'Scalable' }
+  ];
+
   experiences = [
     {
       company: 'Cyber Sapient',
