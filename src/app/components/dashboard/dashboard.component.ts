@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   greeting: string = "Hello ! I'm ";
   myself: string = "I'm";
   about: string =
-    'Passionate Full Stack Developer specializing in high-performance web applications with Next.js and PostgreSQL. I have also developed extensive personal projects using Angular, NestJS, Express, and MongoDB, focusing on creating scalable and maintainable full-stack solutions.';
+    'Full-Stack Developer with 1+ years of experience building high-performance, AI-powered SaaS applications. Specialized in integrating Google Gemini, real-time systems, and scalable multi-role platforms. Expert in designing end-to-end AI workflows, RAG pipelines, and intelligent job matching systems using Next.js, Node.js, and PostgreSQL.';
   githubLink: string = 'https://github.com/shabeelashraf5';
   linkedInLink: string =
     'https://www.linkedin.com/in/mohamed-shabeel-ashraf-8abb4938/';
@@ -51,9 +51,9 @@ export class DashboardComponent implements OnInit {
 
   typeName() {
     const phrases = [
+      'Full-Stack Developer',
       'Next JS + PostgreSQL Developer',
-      'Full Stack Developer',
-      'Scalable Web Architect',
+      'Scalable AI Engineer',
     ];
     let index = 0;
     let charIndex = 0;

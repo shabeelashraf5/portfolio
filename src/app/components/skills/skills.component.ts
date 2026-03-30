@@ -49,12 +49,12 @@ export class SkillsComponent implements AfterViewInit {
   ];
 
   contributions: string[] = [
-    'Frontend Development: Professional UIs with Next.js, Angular and Tailwind CSS.',
-    'Backend Development: Scalable systems with PostgreSQL, Node.js and MongoDB.',
-    'End-to-End Development: Architecting projects from concepts to deployment.',
-    'Cloud & DevOps: Expertise in AWS (S3, EC2, Route 53) and Git workflows.',
-    'Payment Architecture: Seamless Stripe integrations for secure transactions.',
-    'Performance & Logic: Optimized code for speed, security, and scalability.',
+    'AI Integration: Building intelligent workflows with Gemini, OpenAI and MCP Servers.',
+    'Real-Time Systems: Implementing voice/video systems with WebRTC and LiveKit.',
+    'Scalable Architecture: Designing multi-role platforms and RAG pipelines.',
+    'Frontend Excellence: Professional UIs with Next.js, React and Tailwind CSS.',
+    'Backend Mastery: Scalable systems with PostgreSQL, Node.js and Supabase.',
+    'DevOps & Auth: Expertise in Git, AWS and Supabase Authentication.',
   ];
 
   conclusion: string =

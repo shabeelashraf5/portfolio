@@ -1,38 +1,44 @@
 <div id="profile" class="relative min-h-screen flex lg:items-center justify-center bg-[#0c0a09]">
 
-  <!-- Subtle Background Aurora -->
+  <!-- Enhanced Background Mesh Gradients -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <div
-      class="absolute top-[-20%] left-[-20%] w-[80vw] h-[80vw] bg-cyan-900/10 rounded-full blur-[150px] animate-pulse-slow">
+      class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-cyan-500/10 rounded-full blur-[120px] animate-pulse-slow">
     </div>
     <div
-      class="absolute bottom-[-20%] right-[-20%] w-[80vw] h-[80vw] bg-blue-900/10 rounded-full blur-[150px] animate-pulse-slow delay-1000">
+      class="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-purple-500/10 rounded-full blur-[120px] animate-float-slow">
     </div>
-    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+    <div
+      class="absolute top-[20%] right-[10%] w-[40vw] h-[40vw] bg-blue-500/5 rounded-full blur-[100px] animate-pulse-slow delay-700">
+    </div>
+    <div
+      class="absolute bottom-[10%] left-[20%] w-[50vw] h-[50vw] bg-cyan-400/5 rounded-full blur-[130px] animate-float-slow delay-1000">
+    </div>
+    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
   </div>
 
   <div
-    class="container mx-auto px-6 pt-24 pb-12 lg:py-0 relative z-10 flex flex-col items-center justify-center text-center">
+    class="container mx-auto px-6 pt-32 pb-12 lg:py-0 relative z-10 flex flex-col items-center justify-center text-center">
 
-    <!-- Status Badge -->
-    <div class="mb-4 lg:mb-6 animate-fade-in-up">
+    <!-- Status Badge (Glassmorphic) -->
+    <div class="mb-10 lg:mb-12 animate-fade-in-up">
       <span
-        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium tracking-wide">
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full frost-glass text-cyan-400 text-xs font-semibold tracking-wider uppercase">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
         </span>
-        Available for remote opportunities
+        Available for new projects
       </span>
     </div>
 
     <!-- Greeting -->
     <div class="animate-fade-in-up">
-      <h3 class="text-xs md:text-base text-gray-500 font-outfit font-medium tracking-[0.4em] uppercase mb-4 lg:mb-6">
+      <h3 class="text-sm md:text-lg text-gray-400 font-outfit font-medium tracking-[0.5em] uppercase mb-6">
         {{ greeting }}
       </h3>
 
-      <!-- Name -->
+      <!-- Name with animated gradient -->
       <h1
         class="text-4xl md:text-7xl font-bold text-white font-outfit leading-tight mb-4 lg:mb-6 tracking-tight gradient-text">
         {{ fullName }}
@@ -40,54 +46,75 @@
 
       <!-- Typing Role -->
       <div class="h-8 md:h-12 flex items-center justify-center mb-6 lg:mb-8">
-        <p class="text-xl md:text-3xl text-gray-400 font-outfit font-light">
+        <p class="text-xl md:text-3xl text-gray-400 font-outfit font-light tracking-tight">
           I am a <span class="text-white font-semibold typing-cursor">{{ displayedText }}</span>
         </p>
       </div>
     </div>
 
-    <!-- Description -->
+    <!-- Unique Summary with Highlights -->
     <p
-      class="text-base md:text-lg text-gray-400 font-inter font-light leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200">
-      {{ about }}
+      class="text-base md:text-lg text-gray-300 font-inter font-light leading-relaxed max-w-3xl mx-auto animate-fade-in-up delay-200 opacity-90 drop-shadow-sm">
+      <span class="text-white font-medium">Full-Stack Developer</span> with
+      <span class="text-cyan-400/80">1+ years of experience</span> building
+      <span class="text-white">high-performance, AI-powered SaaS applications</span>.
+      Specialized in integrating
+      <span class="text-cyan-400 font-semibold">Google Gemini</span>,
+      <span class="text-white">real-time systems</span>, and
+      <span class="text-white">scalable multi-role platforms</span>.
+      Expert in designing
+      <span class="text-cyan-400 font-semibold">end-to-end AI workflows</span>,
+      <span class="text-white">RAG pipelines</span>, and
+      <span class="text-white">intelligent job matching systems</span>
+      using
+      <span class="text-white border-b border-cyan-500/30">Next.js</span>,
+      <span class="text-white border-b border-cyan-500/30">Node.js</span>, and
+      <span class="text-white border-b border-cyan-500/30">PostgreSQL</span>.
     </p>
 
-    <!-- Mini Tech Stack (Colorized & Priority) -->
-    <div class="flex flex-wrap items-center justify-center gap-6 mt-8 lg:mt-12 animate-fade-in-up delay-250">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-        class="w-9 h-9 lg:w-8 lg:h-8 hover:scale-110 transition-transform bg-white/10 rounded-full p-1 border border-white/5"
-        alt="NextJS">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-        class="w-8 h-8 lg:w-8 lg:h-8 hover:scale-110 transition-transform" alt="PostgreSQL">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
-        class="w-7 h-7 hover:scale-110 transition-transform" alt="Angular">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-        class="w-7 h-7 hover:scale-110 transition-transform" alt="NodeJS">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-        class="w-7 h-7 hover:scale-110 transition-transform" alt="MongoDB">
+    <!-- Mini Tech Stack (Frosted Glass Containers) -->
+    <div class="flex flex-wrap items-center justify-center gap-4 mt-12 lg:mt-16 animate-fade-in-up delay-300">
+      <div class="p-3 frost-glass rounded-2xl hover:scale-110 transition-all duration-300 group">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+          class="w-8 h-8 filter brightness-110" alt="NextJS">
+      </div>
+      <div class="p-3 frost-glass rounded-2xl hover:scale-110 transition-all duration-300 group">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+          class="w-8 h-8" alt="PostgreSQL">
+      </div>
+      <div class="p-3 frost-glass rounded-2xl hover:scale-110 transition-all duration-300 group">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+          class="w-8 h-8" alt="Angular">
+      </div>
+      <div class="p-3 frost-glass rounded-2xl hover:scale-110 transition-all duration-300 group">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+          class="w-8 h-8" alt="NodeJS">
+      </div>
+      <div class="p-3 frost-glass rounded-2xl hover:scale-110 transition-all duration-300 group">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+          class="w-8 h-8" alt="MongoDB">
+      </div>
     </div>
 
+    <!-- CTA Buttons with glow and glass effects -->
     <div
-      class="flex flex-col sm:flex-row items-center justify-center gap-6 lg:gap-8 mt-8 lg:mt-12 animate-fade-in-up delay-300">
+      class="flex flex-col sm:flex-row items-center justify-center gap-8 mt-12 lg:mt-16 animate-fade-in-up delay-500">
       <button (click)="downloadPDF()"
-        class="group relative px-8 py-3 bg-transparent overflow-hidden rounded-full border border-cyan-500/50 text-white shadow-[0_0_20px_rgba(6,182,212,0.1)] hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all duration-300">
-        <div
-          class="absolute inset-0 w-0 bg-cyan-500 transition-all duration-[250ms] ease-out group-hover:w-full opacity-10">
-        </div>
-        <span class="relative font-outfit font-bold text-lg tracking-widest uppercase">Download Resume</span>
+        class="btn-premium px-10 py-4 bg-cyan-500/10 rounded-full border border-cyan-500/30 text-white font-outfit font-bold text-lg tracking-widest uppercase hover:bg-cyan-500/20">
+        Download Resume
       </button>
 
-      <div class="flex space-x-6">
+      <div class="flex space-x-8">
         <a [href]="githubLink" target="_blank"
-          class="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-110">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          class="p-3 frost-glass rounded-full text-gray-400 hover:text-white hover:border-white/40 transition-all duration-300 transform hover:scale-110">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
           </svg>
         </a>
         <a [href]="linkedInLink" target="_blank"
-          class="text-gray-500 hover:text-cyan-400 transition-all duration-300 transform hover:scale-110">
-          <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          class="p-3 frost-glass rounded-full text-gray-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-all duration-300 transform hover:scale-110">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
           </svg>
@@ -95,9 +122,10 @@
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-10 animate-bounce delay-1000 opacity-50">
-      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Scroll Indicator (Moved lower to avoid button collision) -->
+    <div class="absolute bottom-6 animate-bounce delay-1000 opacity-30 flex flex-col items-center gap-2">
+      <span class="text-[10px] text-gray-500 uppercase tracking-[0.2em]">Scroll</span>
+      <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
