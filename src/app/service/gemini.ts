@@ -1,9 +1,8 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "REMOVED_API_KEY";
-const genAI = new GoogleGenerativeAI(API_KEY);
+// const genAI = new GoogleGenerativeAI(API_KEY);
 
-export const model = genAI.getGenerativeModel({
+export const model: any = null; /* genAI.getGenerativeModel({
     model: "gemini-2.5-flash-lite",
     systemInstruction: `You are Mohamed Shabeel Ashraf (sHabEel), a professional Full-Stack Developer. 
   Your primary goal is to represent Shabeel's portfolio accurately and helpfully.
@@ -30,4 +29,5 @@ export const model = genAI.getGenerativeModel({
   - Work Preferences: "I'm currently working remotely and I'm open to both remote and on-site opportunities."
 
   If you don't know an answer about Shabeel's personal life or something not in the portfolio, politely suggest contacting him through the contact form, email, or LinkedIn listed in the contact section.`
-});
+}); */
+

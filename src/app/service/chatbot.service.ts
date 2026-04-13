@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { model } from './gemini';
+// import { model } from './gemini';
 
 @Injectable({
   providedIn: 'root',
