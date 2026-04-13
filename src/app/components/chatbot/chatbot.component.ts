@@ -14,7 +14,7 @@ export class ChatbotComponent {
 
   isChatboxVisible = false;
   message = '';
-  chatMessages = [{ sender: 'sHabEel', message: 'Hello, how can I help you?' }];
+  chatMessages = [{ sender: "sHAbEel's Bot Assistant", message: 'Hello, how can I help you?' }];
   isTyping!: boolean;
   usedQuestions: Set<string> = new Set();
 
@@ -56,7 +56,7 @@ export class ChatbotComponent {
       // Simulate a 2-second typing delay for a more natural feel
       setTimeout(() => {
         this.chatbotservice.predictResponse(userMessage).then((response) => {
-          this.chatMessages.push({ sender: 'sHabEel', message: response });
+          this.chatMessages.push({ sender: "sHAbEel's Bot Assistant", message: response });
           this.isTyping = false;
           setTimeout(() => this.scrollToBottom(), 10);
 
@@ -109,7 +109,7 @@ export class ChatbotComponent {
   updateQuestions() { }
 
   refreshChatbox() {
-    this.chatMessages = [{ sender: 'sHabEel', message: 'Hello, how can I help you?' }];
+    this.chatMessages = [{ sender: "sHAbEel's Bot Assistant", message: 'Hello, how can I help you?' }];
     this.isTyping = false;
     this.message = '';
     this.usedQuestions.clear();
